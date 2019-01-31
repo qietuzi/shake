@@ -87,7 +87,7 @@ export default {
     rotateY() {
       let cos = Math.cos(this.angleY)
       let sin = Math.sin(this.angleY)
-      this.children.forEach((item, index) => {
+      this.children.forEach(item => {
         let x = item.x * cos - item.z * sin
         let z = item.z * cos + item.x * sin
         item.x = x
@@ -139,7 +139,7 @@ export default {
     }
   },
   watch: {
-    data(newVal) {
+    data() {
       this.$nextTick(() => {
         this.init()
       })
